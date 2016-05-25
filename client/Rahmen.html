@@ -1,0 +1,25 @@
+<template name = "Rahmen">
+      {{> yield}}
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+                 <div id="Statusleiste">
+                <div id="LeisteList">
+                  <a href="{{pathFor route='List'}}" style="color: white; display: inline-block; font-size: 35pt; text-decoration: none;">
+                    <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+
+                  </a>
+                </div>
+                <div id="LeisteScanner">
+                  <a href="{{pathFor route='barcode_scanner'}}" style="color: white; display: inline-block; font-size: 35pt; text-decoration: none;">
+                  <span class="glyphicon glyphicon-barcode" aria-hidden="true"></span>
+
+                  </a>
+                </div>
+                <div id="LeisteOption">
+                  <a href="{{pathFor route='Options'}}" style="color: white; display: inline-block; font-size: 35pt; text-decoration: none;">
+                      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  </a>
+                </div>
+                </div>
+
+        </nav>
+  </template>

@@ -1,0 +1,69 @@
+<template name = "DetailedView">
+   
+ <nav class="navbar navbar-default">
+  <div class="container" name ="TopBar">
+    <div class="navbar-text navbar-left" name ="Leiste_Name" style="float: left;">
+      <h4> <b>{{werteBerechnen.name}} </b></h4>
+    </div>
+    <div class="navbar-text navbar-right" name = "Leiste_Score" style="float: right; color: #08298A;">
+      <h4><b> {{werteBerechnen.score}} </b></h4>
+    </div>
+  </div>
+</nav>
+
+
+
+<div name = "deteiledIngre">
+<h1>Ingredients </h1>
+<p>Calculated in relation to the package size:
+</p> 
+
+
+	<ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge">{{werteBerechnen.packung}} g/ml</span>
+    Package Size
+  </li>
+  <li class="list-group-item">
+    <span class="badge">{{werteBerechnen.fett}} g/ml</span>
+    Fat
+  </li>
+  <li class="list-group-item">
+    <span class="badge">{{werteBerechnen.gesfett}} g/ml</span>
+    Saturated fatty acids
+  </li>
+  <li class="list-group-item">
+    <span class="badge">{{werteBerechnen.zucker}} g/ml</span>
+    Sugar
+  </li>
+  <li class="list-group-item">
+    <span class="badge">{{werteBerechnen.salz}} g/ml</span>
+    Salt
+  </li>
+  <li class="list-group-item">
+    <span class="badge">{{werteBerechnen.kohlen}} %</span>
+    Carbohydrates
+  </li>
+  <li class="list-group-item">
+    <span class="badge">{{werteBerechnen.eiweiss}} %</span>
+    Protein
+  </li>
+  <li class="list-group-item">
+    <span class="badge">{{werteBerechnen.kalorien}} %</span>
+    Calories
+  </li>
+</ul>
+</div>
+
+<center>
+ <div id="WeiterleitungScans" class="LINKsBeside">
+  <a href="{{pathFor route='ScoreView'}}" style="color: white; display: inline-block; font-size: 15pt; text-decoration: none;">Back</a>
+</div>  
+ <div id="WeiterleitungBackground1" class="LINKsBeside">
+  <a href="{{pathFor route='BackgroundInfos'}}" style="color: white; display: inline-block; font-size: 15pt; text-decoration: none;">Background</a>
+</div>
+</center>
+
+
+
+</template>

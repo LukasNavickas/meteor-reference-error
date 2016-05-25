@@ -1,0 +1,48 @@
+/* CSS declarations go here */
+
+
+
+/* Common  ******************************************************* */
+#TopBar {font-size: 15pt; text-decoration: none; vertical-align: center;}
+
+a {text-decoration: none;}  
+
+/* NAV-Leiste down*/
+#LeisteList{width: 30%; margin: 0; bottom: 0; left: 0; background-color: #585858; 
+  text-align: center; vertical-align: center;float: left;height: 65px;}
+#LeisteScanner {width: 40%; margin: 0; bottom: 0; background-color: #08298A; 
+  text-align: center; vertical-align: center;height: 65px; float: left;}
+#LeisteOption{width: 30%; margin: 0; 
+  bottom: 0; right: 0; background-color: #585858; 
+  text-align: center; vertical-align: center; float: left; height: 65px;}
+
+
+/* Common Buttons under each other */
+.LINKs {width: 35%; margin: 5px; background-color: #08298A; 
+	text-align: center; vertical-align: center;height: 35px; float: right; clear: right; color: 
+	white; display: inline-block; font-size: 15pt; text-decoration: none; margin-bottom: 15px; margin-top: 25px; border-radius: 10px;}
+
+/* Butons next to each other*/
+.LINKsBeside{width: 35%; margin: 5px; background-color: #08298A; 
+  text-align: center; vertical-align: center;height: 35px; float: none; clear: right; clear: left; color: white;
+   display: inline-block; font-size: 15pt; text-decoration: none; margin-top: 10px; margin-bottom: 15px; border-radius: 10px;}
+
+/* Jumbotron on the starting page */
+.jumbotron {height: 100vh;width: 100%;left: 0; right: 0; margin-left: 0; padding-left: 0; margin: 0;} 
+
+
+/* SPECIAL ********************************************************** */
+
+/* Background-Information-Tab-System*/
+#nav-tabs {clear: right; float: none;}
+
+/* DetailedView */
+#deteiledIngre {float: left; clear: left; width: }
+
+/* Body of the Jumbotron on the starting-page */
+#Welcome{height: 100%; min-height: 100%; padding-bottom: 65px;position: absolute;left: 0; 
+	right: 0; margin-left: 0;padding-left: 0; width: 100%; min-width: 100%; margin: 0;}
+
+/* ProgressBar of the ScoreView */
+.progress{height: 55px; margin-left: 5px; margin-right: 5px; font-size: 20px; vertical-align: center; align-content: center;}
+

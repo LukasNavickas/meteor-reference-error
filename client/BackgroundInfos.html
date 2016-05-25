@@ -1,0 +1,218 @@
+<template name = "BackgroundInfos">
+
+<nav class="navbar navbar-default">
+  <div class="container" name ="TopBar">
+    <div class="navbar-text navbar-left" name ="Leiste_Name" style="float: left;">
+       <h4> <b>{{werteBerechnen.name}}</b></h4>
+    </div>
+    <div class="navbar-text navbar-right" name = "Leiste_Score" style="float: right; color: #08298A;">
+       <h4> <b>{{werteBerechnen.score}}</b></h4>
+    </div>
+  </div>
+</nav>
+
+
+<center>
+<div id="WeiterleitungDetailed1" class="LINKsBeside">
+  <a href="{{pathFor route='DetailedView'}}" style="color: white; display: inline-block; font-size: 15pt; text-decoration: none;">Details</a>
+</div>
+
+<div id="WeiterleitungBack1" class="LINKsBeside">
+  <a href="{{pathFor route='ScoreView'}}" style="color: white; display: inline-block; font-size: 15pt; text-decoration: none;">Back</a>
+</div>  
+
+</center>
+
+<div id = "nav-tabs" class ="nav">
+<center>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#Score">Healthy-Score</a></li>
+  <li role="presentation"><a href="#Background">Background</a></li>
+  <li role="presentation"><a href="#Data-Sources">Data-Sources</a></li>
+</ul>
+</center>
+
+  <div class="tab-content">
+    <div id="Score" class="tab-pane fade in active">
+      <h3>Healthy-Score</h3>
+    <b>What is our score and how is it calculated?</b>
+    <p>To be able to better classify the scanned foods, we use a score. It ranges from 0 to 100 and states how healthy or unhealthy a food is. A score of 100 indicates that the food is completely healthy whereas a score of 0 refers to a completely unhealthy food.</p>
+    <p>To compute the score we use the following nutritional value information:</p>
+    <ul>
+      <li>Energy density</li>
+      <li>Amount of fat</li>
+      <li>Amount of saturated fatty acids</li>
+      <li>Amount of sugar</li>
+      <li>Amount of salt</li>
+    </ul>
+    <p>On the basis of the following table the nutritional values are classified which means that every nutritional value is categorized. The values apply for an average adult. Category 1 states that the product can be consumed frequently and without worries, category 2 means increased attention, and category 3 suggests a spare consumption.</p>
+    <br>
+    <table>
+      <tr>
+        <td></td>
+        <td align="center"><b>Cat. 1</b></td>
+        <td align="center"><b>Cat. 2</b></td>
+        <td align="center"><b>Cat. 3</b></td>
+      </tr>
+      <br>
+      <br>
+      <tr>
+        <td>Energy density</td>
+        <td> &lt;= 1.5 kcal/g</td>
+        <td> &gt; 1.5 kcal/g &amp; &lt; 2.5 kcal/g</td>
+        <td> &gt;= 2.5 kcal/g</td>
+      </tr>
+      <br>
+      <br>
+      <tr>
+        <td>Amount of fat</td>
+        <td> &lt;= 3%</td>
+        <td> &gt; 3% &amp; &lt; 20%</td>
+        <td> &gt;= 20%</td>
+      </tr>
+      <br>
+      <br>
+      <tr>
+        <td>Amount of saturated fatty acids</td>
+        <td> &lt;= 1.5%</td>
+        <td> &gt; 1.5% &amp; &lt; 5%</td>
+        <td> &gt;= 5%</td>
+      </tr>
+      <br>
+      <br>
+      <tr>
+        <td>Amount of sugar</td>
+        <td> &lt;= 5%</td>
+        <td> &gt; 5% &amp; &lt; 12.5%</td>
+        <td> &gt;= 12.5%</td>
+      </tr>
+      <br>
+      <br>
+      <tr>
+        <td>Amount of salt</td>
+        <td> &lt;= 0.3%</td>
+        <td> &gt; 0.3% &amp; &lt; 1.5%</td>
+        <td> &gt;= 1.5%</td>
+      </tr>
+      <br><br>
+    </table>
+    <p>The score is calculated using the categories. One half of the score is represented by the energy density and the other half by the amount of the four stated ingredients. The score can only be computed if all four needed amounts of ingredients are available. Starting from a score of 100, a fixed value is subtracted for the nutritional value information. These values are represented in the following table and come from the fact that a completely healthy food (only category 1) receives a score of 100 and a completely unhealthy food (only category 3) a score of 0.</p>
+    <br><br>
+    <table>
+      <tr>
+        <td></td>
+        <td align="center"><b>Category 1</b></td>
+        <td align="center"><b>Category 2</b></td>
+        <td align="center"><b>Category 3</b></td>
+      </tr>
+      <br><br>
+      <tr>
+        <td>Energy density</td>
+        <td>-0</td>
+        <td>-25</td>
+        <td>-50</td>
+      </tr>
+      <br><br>
+      <tr>
+        <td>Amount of fat</td>
+        <td>-0</td>
+        <td>-6.25</td>
+        <td>-12.5</td>
+      </tr>
+      <br><br>
+      <tr>
+        <td>Amount of saturated fatty acids</td>
+        <td>-0</td>
+        <td>-6.25</td>
+        <td>-12.5</td>
+      </tr>
+      <br><br>
+      <tr>
+        <td>Amount of sugar</td>
+        <td>-0</td>
+        <td>-6.25</td>
+        <td>-12.5</td>
+      </tr>
+      <br><br>
+      <tr>
+        <td>Amount of salt</td>
+        <td>-0</td>
+        <td>-6.25</td>
+        <td>-12.5</td>
+      </tr>
+      <br><br>
+    </table>
+    <p>There is an exception which needs to be considered. If one of the four nutritional values for fat, saturated fatty acids, sugar, or salt is that high that it reaches min. the double value of category 3 (e.g. instead of 12.5 % amount of sugar a value of 25 % or more is reached), the value which is subtracted gets doubled (therefore, 25 and not 12.5 is subtracted). However, the sum of the four values cannot be bigger than 50 because otherwise it could result in a negative score.</p>
+    <br><br>
+    <b>An example of how to calculate the score</b>
+    <p>For the energy density, a food is in category 2. For the four amounts of ingredients, the food is twice in category 1, once in category 2, and once in category 3. The food exceeds the value for category 3 more than twice. Therefore, the score is: 100 – 25 – 0 – 0 – 6.25 – 2 * 12.5 = 43.75.</p>
+    <br><br><br><br>
+     
+     
+
+</div>
+    <div id="Background" class="tab-pane fade">
+      <h3>Background Information</h3>
+    <b>What is the nutritional value?</b>
+    <p>The nutritional value is the physiological value of food and it depends on the quantity and ratio of its ingredients and their availability for the human organism. The main components of the nutritional value are carbohydrates, fats, proteins, and the usable energy which is generated during digestion (physiological energy value). It must be considered how much of the contained nutritional values are needed for an individual during the day; this value depends on gender, age, and type of activity of the particular person. For the reason of simplification, we use average values.</p>
+    <b>What is the nutritional labeling?</b>
+    <p>The nutritional labeling is the declaration of average nutritional values on food packages. It will be mandatory inside the European Union starting from December 2016. The nutritional labeling must contain the so called “big seven”:</p>
+    <br><br>
+    <ul>
+      <li>Energy value</li>
+      <li>Fats</li>
+      <li>Saturated fatty acids</li>
+      <li>Carbohydrates</li>
+      <li>Sugar</li>
+      <li>Proteins</li>
+      <li>Salt</li>
+    </ul>
+    <br><br>
+    <b>What is the energy value?</b>
+    <p>The energy value is the amount of energy which can be obtained by the human body during digestion of food and which can be used for covering the energy demand. The energy value is measured in the units of kilocalories (kcal) and kilojoule (kJ) (ratio: 1 kcal = 4.1868 kJ). An average adult between 19 and 50 years should consume approx. 2245 kcal per day. If the energy intake through food is higher than the energy consumption, the surplus energy is stored as fat which can lead to overweight.</p>
+    <br><br>
+    <b>What are fats?</b>
+    <p>Next to carbohydrates and proteins, fats are part of the major nutrients. Dietary fats are composed of glycerin and the characteristics of different fats result from different fatty acids. Moreover, some fats contain fatlike accompanying substances like cholesterol. Fats are the main energy supplier for the human organism and can be stored as depot fats within the human body which can then be reduced again if the energy demand is high. Not more than a third of the daily energy input should be covered by fats. An average adult between 19 and 50 years should not consume more than 81.45 g of fats per day.</p>
+    <br><br>
+    <b>What are saturated fatty acids?</b>
+    <p>Fatty acids are an essential component of fats and can be categorized based on their structure: saturated, unsaturated, and multi-unsaturated fatty acids. Usually, saturated fatty acids come from animal products like lard, meat, butter, or milk. A high consumption is unhealthy and can lead to overweight and enhanced risk for cardiovascular diseases. An average adult between 19 and 50 years should not consume more than 24.65 g of saturated fatty acids per day.</p>
+    <br><br>
+    <b>What are carbohydrates?</b>
+    <p>Next to fats and proteins, carbohydrates are part of the major nutrients. They deliver energy, are used as building material for the human body, and can be classified into different groups: simple sugar (e.g. glucose, fructose), double sugar (e.g. saccharose), and polysaccharide (e.g. glycogen). The latter should constitute the main part of our food carbohydrates. They only lead to a low increase of the blood sugar and can be found in noodles, rice, and potatoes, for instance. An average adult between 19 and 50 years should consume approx. 257.35 g of carbohydrates per day.</p>
+    <br><br>
+    <b>What is sugar?</b>
+    <p>Sugar is the term for all sweet-tasting carbohydrates and in the everyday language it is mainly used for saccharose. An average adult between 19 and 50 years should not consume more than 54.75 g of sugar per day.</p>
+    <br><br>
+    <b>What are proteins?</b>
+    <p>Next to fats and carbohydrates, proteins are part of the major nutrients. They are composed of single amino acids and serve as building blocks for cells and various active substances like antigens and hormones. Foods which contain a lot of proteins are lean meat, fish, milk, eggs, and potatoes. An average adult between 19 and 50 years should consume approx. 50.25 g of proteins per day.</p>
+    <br><br>
+    <b>What is salt?</b>
+    <p>Cooking salt respectively table salt consists of sodium and chloride which are needed for important functions in the body. Salt is used as spice in dishes and is contained in ready-to-serve meal in large amounts. An increased consumption of salt can lead to high blood pressure and favors the forming of edemas. Specialists recommend not consuming more than 6 g of salt per day.</p>
+    <br><br><br><br>
+    </div>
+
+
+    <div id="Data-Sources" class="tab-pane fade">
+      <h3>Data Sources</h3>
+    <b>Where does our information come from?</b>
+    <p>We got our information from</p>
+    <ul>
+      <li>the <a href="http://www.food.gov.uk/">Food Standards Agency (FSA)</a>,</li>
+      <li><a href="http://www.enzyklo.de/">Enzyklo</a>,</li>
+      <li>the <a href="http://www.lebensmittelklarheit.de/">Bundesverband der Verbraucherzentralen und Verbraucherverbände</a>,</li>
+      <li>and the <a href="http://www.ernaehrung.de/lexikon/ernaehrung/">nutrition dictionary of the Deutsches Ernährungsberatungs und –informationsnetz (DEBInet)</a>.</li>
+    </ul>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+});
+</script>
+
+</template>
