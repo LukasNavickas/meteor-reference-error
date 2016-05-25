@@ -5,6 +5,9 @@
         <h1>Welcome to HealtyShopping!</h1>
         <p>Tab to Scan!</p>
         <p><button class="btn btn-primary btn-lg scanButton" role="button">Scan now</button></p>
+        {{#if isCreateGame}}
+          {{> ScoreView}}
+        {{/if}}
       </div>
     </div>
   </div>

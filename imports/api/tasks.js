@@ -5,6 +5,10 @@ export const list = new Ground.Collection('list', { connection: null });
 Meteor.methods({
     'code.check'(info) {
         
+    try {
+        
+        console.log('the code is - ' + info);
+        
         allInfo = ScrapeParser.get('http://www.codecheck.info/product.search?q='+info);    
         ref = allInfo.references[1];
         
@@ -87,6 +91,12 @@ Meteor.methods({
         
    
         return values;
+    
+    } catch (err) {
+        if (isServer) throw err;
+              console.log('error, server reruns code');
+              Meteor.call('code.check', info);
+        }
     },
     'code.write'(values, score) {
         list.insert({

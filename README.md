@@ -11,4 +11,3 @@ git push –u origin master
 OUT:
 git pull git@gitlab.lrz.de:FBL2016/food-shopping-behavior.git
 
-"# meteor-reference-error" 
